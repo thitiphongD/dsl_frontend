@@ -47,10 +47,10 @@ input {
 }
 
 .primary {
-  background: #10b981;
+  background: #15593b;
   padding: 5px 10px 5px 10px;
   border-radius: 5px;
-  border: rgb(0, 220, 130) solid 1px;
+  border: #217b54 solid 1px;
 }
 
 .danger {

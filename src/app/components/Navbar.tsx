@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const HorizontalNavbar: React.FC = () => {
   return (
-    <nav className="flex-center gap-10 border-b p-2">
+    <nav className="flex-center gap-10 border-b border-[#343434] p-2">
       <div className="flex-center gap-2">
         <Image
           src="/favicon.ico"

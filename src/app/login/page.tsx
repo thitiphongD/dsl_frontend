@@ -4,6 +4,7 @@ import Icon from "@mdi/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import PasswordInput from "../components/PasswordInput";
 
 const LoginPage = () => {
   const router = useRouter();
@@ -15,15 +16,16 @@ const LoginPage = () => {
     console.log("Logging in with:", email, password);
     // router.push("/dashboard");
   };
+
+  const handlePasswordChange = (value: string) => {
+    setPassword(value);
+  };
+
   return (
     <div className="all-center">
       <div>
         <p className="text-4xl">Welcome back</p>
         <p className="text-[#7c7c7c]">Sign in to your account</p>
-        {/* <label>Email</label>
-        <input type="email" />
-        <span>Password</span>
-        <input type="password" /> */}
         <br />
         <button className="all-center default gap-2 w-96">
           <Icon path={mdiGithub} size={1} />
@@ -60,20 +62,24 @@ const LoginPage = () => {
                 Forgot Password?
               </Link>
             </div>
-            <input
-              type="password"
+            <PasswordInput
               placeholder="Enter your password"
+              className="w-96 mb-4"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              className="w-96 placeholder-[#7c7c7c]"
+              onChange={handlePasswordChange}
             />
           </div>
-          <button className="default" type="submit">
+          <button className="primary w-96" type="submit">
             Login
           </button>
         </form>
-        {/* <Link href="/register">to Register</Link> */}
+        <br />
+        <p className="text-[#7c7c7c] all-center">
+          Don&apos;t have an account?
+          <span className="ml-2 text-white underline">
+            <Link href="/register">Register Now</Link>
+          </span>
+        </p>
       </div>
     </div>
   );
