@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import PasswordInput from "../components/PasswordInput";
+import TermAndCondition from "../components/TermAndCondition";
 
 const LoginPage = () => {
   const router = useRouter();
@@ -23,7 +24,7 @@ const LoginPage = () => {
 
   return (
     <div className="all-center">
-      <div>
+      <div className="w-96">
         <p className="text-4xl">Welcome back</p>
         <p className="text-[#7c7c7c]">Sign in to your account</p>
         <br />
@@ -64,7 +65,7 @@ const LoginPage = () => {
             </div>
             <PasswordInput
               placeholder="Enter your password"
-              className="w-96 mb-4"
+              className="mb-4"
               value={password}
               onChange={handlePasswordChange}
             />
@@ -80,6 +81,8 @@ const LoginPage = () => {
             <Link href="/register">Register Now</Link>
           </span>
         </p>
+        <br />
+        <TermAndCondition />
       </div>
     </div>
   );

@@ -29,19 +29,19 @@ const PasswordInput: React.FC<PasswordInputProps> = ({
   };
 
   return (
-    <div className={`relative ${className}`}>
+    <div className="inline-block">
       <input
         type={visible ? "text" : "password"}
         placeholder={placeholder}
         value={value}
         onChange={handleInputChange}
         required
-        className="w-96 placeholder-[#7c7c7c]"
+        className={`w-96 placeholder-[#7c7c7c] ${className}`}
       />
       <button
         type="button"
         onClick={togglePasswordVisibility}
-        className="absolute inset-y-0 right-0 px-3 bg-transparent"
+        className="inline-block align-middle ml-[-35px] bg-transparent"
       >
         <Icon
           path={visible ? mdiEyeOutline : mdiEyeOffOutline}
