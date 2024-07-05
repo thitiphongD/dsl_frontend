@@ -54,7 +54,12 @@ const LoginPage = () => {
             />
           </div>
           <div className="mb-4">
-            <p className="text-[#7c7c7c]">Password</p>
+            <div className="flex-center-between">
+              <p className="text-[#7c7c7c]">Password</p>
+              <Link className="text-[#7c7c7c] text-sm" href="/forgotPassword">
+                Forgot Password?
+              </Link>
+            </div>
             <input
               type="password"
               placeholder="Enter your password"
