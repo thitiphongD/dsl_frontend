@@ -13,8 +13,8 @@ const ForgotPasswordPage = () => {
   return (
     <div className="flex items-center justify-center h-[75vh] overflow-hidden">
       <div className="w-96">
-        <p className="text-4xl">Get started</p>
-        <p className="text-[#7c7c7c]">
+        <p className="text-3xl mb-2">Reset Your Password</p>
+        <p className="text-sm text-[#7c7c7c]">
           Type in your email and we&apos;ll send you a link to reset your
           password
         </p>
@@ -22,14 +22,14 @@ const ForgotPasswordPage = () => {
 
         <form onSubmit={handleSubmit}>
           <div className="mb-10">
-            <p className="text-[#7c7c7c]">Email</p>
+            <p className="text-[#7c7c7c] mb-2 text-sm">Email</p>
             <input
               type="email"
-              placeholder="Enter your email"
+              placeholder="you@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="w-96 placeholder-[#7c7c7c]"
+              className="w-96 placeholder-[#7c7c7c] text-xs py-2"
             />
           </div>
           <div className="flex items-center my-4">
