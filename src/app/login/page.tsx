@@ -65,9 +65,9 @@ const LoginPage = () => {
             </div>
             <PasswordInput
               placeholder="Enter your password"
-              className="mb-4"
               value={password}
               onChange={handlePasswordChange}
+              className="mb-2"
             />
           </div>
           <button className="primary w-96" type="submit">

@@ -46,7 +46,7 @@ const PasswordInput: React.FC<PasswordInputProps> = ({
         <Icon
           path={visible ? mdiEyeOutline : mdiEyeOffOutline}
           size={1}
-          className="text-gray-400"
+          className="text-[#7c7c7c]"
         />
       </button>
     </div>
