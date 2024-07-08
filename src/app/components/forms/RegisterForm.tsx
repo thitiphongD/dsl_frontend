@@ -13,7 +13,7 @@ import {
 
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { registerUserAction } from "../../data/actions/auth-actions";
+import { registerUserAction } from "../../data/actions/auth.actions";
 import { useFormState } from "react-dom";
 import { ZodErrors } from "../custom/ZodErrors";
 
@@ -26,8 +26,6 @@ const RegisterForm = () => {
     registerUserAction,
     INITIAL_STATE
   );
-
-  console.log(formState);
 
   return (
     <form action={formAction}>
@@ -78,7 +76,7 @@ const RegisterForm = () => {
       <div className="mt-4 text-center text-sm">
         Have an account?
         <Link className="underline ml-2" href="login">
-          InSing
+          Login
         </Link>
       </div>
     </form>

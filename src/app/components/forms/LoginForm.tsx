@@ -12,10 +12,20 @@ import {
 
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import { loginUserAction } from "../../data/actions/auth.actions";
+import { useFormState } from "react-dom";
+import { ZodErrors } from "../custom/ZodErrors";
+
+const INITIAL_STATE = {
+  data: null,
+};
 
 const LoginForm = () => {
+  const [formState, formAction] = useFormState(loginUserAction, INITIAL_STATE);
+  console.log(formState);
+
   return (
-    <form>
+    <form action={formAction}>
       <Card>
         <CardHeader className="space-y-1">
           <CardTitle className="text-3xl font-bold">Sign In</CardTitle>
@@ -27,11 +37,12 @@ const LoginForm = () => {
           <div className="space-y-2">
             <Label htmlFor="email">Email</Label>
             <Input
-              id="identifier"
-              name="identifier"
+              id="username"
+              name="username"
               type="text"
-              placeholder="username or email"
+              placeholder="username"
             />
+            <ZodErrors error={formState?.zodErrors?.username} />
           </div>
           <div className="space-y-2">
             <Label htmlFor="password">Password</Label>
@@ -41,6 +52,7 @@ const LoginForm = () => {
               type="password"
               placeholder="password"
             />
+            <ZodErrors error={formState?.zodErrors?.password} />
           </div>
         </CardContent>
         <CardFooter className="flex flex-col">
@@ -50,7 +62,7 @@ const LoginForm = () => {
       <div className="mt-4 text-center text-sm">
         Dont have an account?
         <Link className="underline ml-2" href="register">
-          Sign Up
+          Register
         </Link>
       </div>
     </form>
