@@ -28,14 +28,14 @@ const LoginForm = () => {
     <form action={formAction}>
       <Card>
         <CardHeader className="space-y-1">
-          <CardTitle className="text-3xl font-bold">Sign In</CardTitle>
+          <CardTitle className="text-3xl font-bold">Login</CardTitle>
           <CardDescription>
             Enter your details to sign in to your account
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email">Username</Label>
             <Input
               id="username"
               name="username"
