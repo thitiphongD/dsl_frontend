@@ -15,6 +15,7 @@ import { Input } from "@/components/ui/input";
 import { loginUserAction } from "../../data/actions/auth.actions";
 import { useFormState } from "react-dom";
 import { ZodErrors } from "../custom/ZodErrors";
+import { Button } from "@/components/ui/button";
 
 const INITIAL_STATE = {
   data: null,
@@ -26,39 +27,27 @@ const LoginForm = () => {
 
   return (
     <form action={formAction}>
-      <Card>
-        <CardHeader className="space-y-1">
-          <CardTitle className="text-3xl font-bold">Login</CardTitle>
-          <CardDescription>
-            Enter your details to sign in to your account
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="space-y-2">
-            <Label htmlFor="email">Username</Label>
-            <Input
-              id="username"
-              name="username"
-              type="text"
-              placeholder="username"
-            />
-            <ZodErrors error={formState?.zodErrors?.username} />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="password">Password</Label>
-            <Input
-              id="password"
-              name="password"
-              type="password"
-              placeholder="password"
-            />
-            <ZodErrors error={formState?.zodErrors?.password} />
-          </div>
-        </CardContent>
-        <CardFooter className="flex flex-col">
-          <button className="w-full">Sign In</button>
-        </CardFooter>
-      </Card>
+      <div className="space-y-2">
+        <Label htmlFor="email">Username</Label>
+        <Input
+          id="username"
+          name="username"
+          type="text"
+          placeholder="username"
+        />
+        <ZodErrors error={formState?.zodErrors?.username} />
+      </div>
+      <div className="space-y-2">
+        <Label htmlFor="password">Password</Label>
+        <Input
+          id="password"
+          name="password"
+          type="password"
+          placeholder="password"
+        />
+        <ZodErrors error={formState?.zodErrors?.password} />
+      </div>
+      <Button>Login</Button>
       <div className="mt-4 text-center text-sm">
         Dont have an account?
         <Link className="underline ml-2" href="register">
